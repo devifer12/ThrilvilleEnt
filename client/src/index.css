@@ -2,6 +2,7 @@
 
 body {
     background: #E9E9E9;
+    /* background: black; */
 }
 
 .clip-path{
@@ -11,4 +12,8 @@ body {
 .clip-path2{
     border-radius: 10px;
     clip-path: path("M 0 0 H 420 A 20 20 0 0 1 440 20 V 100 A 20 20 0 0 0 460 120 L 530 120  A 20 20 0 0 1 550 140 V 530 A 20 20 0 0 1 530 550 L 20 500 A 20 20 0 0 1 0 480 V 20 A 20 20 0 0 1 20 0 Z");
+}
+
+.mobile-clip-path{
+    clip-path: path("M 0 80 A 20 20 0 0 1 20 60 H 140 A 20 20 0 0 0 160 40 V 20 A 20 20 0 0 1 180 0 H 340 A 20 20 0 0 1 360 20 V 330 A 20 20 0 0 1 340 350 H 220 A 20 20 0 0 0 200 370 V 390 A 20 20 0 0 1 180 410 H 20 A 20 20 0 0 1 0 390 Z");
 }

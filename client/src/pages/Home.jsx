@@ -4,11 +4,11 @@ import Navbar from '../components/home/Navbar'
 
 const Home = () => {
   return (
-    <div>
+    <div className='h-screen'>
         <Navbar /> 
         <Hero />
-        {/* <div className='h-screen'></div>
-        <div className='h-screen'></div> */}
+        <div className='h-screen'></div>
+        <div className='h-screen'></div>
     </div>
   )
 }
