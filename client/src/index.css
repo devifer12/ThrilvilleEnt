@@ -1,19 +1,68 @@
 @import "tailwindcss";
 
 body {
-    background: #E9E9E9;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: #f9fafb;
     /* background: black; */
 }
 
-.clip-path{
-    clip-path: path("M 30,0 H 970 A 30,30 0 0 1 1000,30 V 820 A 30,30 0 0 1 970,850 H 270 A 30,30 0 0 1 240,820 V 650 A 20,20 0 0 0 220,630 H 140 A 20,20 0 0 1 120,610 V 520 A 20,20 0 0 0 100,500 H 30 A 30,30 0 0 1 0,470 V 30 A 30,30 0 0 1 30,0 Z");
+/* Activities carousel child rounding helpers to keep outer corners rounded and inner edges square */
+.activities-row > div {
+  transition: transform 0.7s cubic-bezier(.22,.9,.25,1), border-radius 0.2s ease;
+}
+.activities-row > div:first-child {
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  overflow: hidden;
+}
+.activities-row > div:last-child {
+  border-top-right-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  overflow: hidden;
+}
+.activities-row > div:nth-child(2) {
+  border-radius: 1rem;
+  z-index: 20;
+  overflow: hidden;
 }
 
+/* Hide duplicate Get started button in mobile header when mobile menu is open */
+body.mobile-menu-open .mobile-header-auth { display: none !important }
+
+/* Small helpers for the vertical snap Activities page */
+.snap-y { scroll-snap-type: y mandatory }
+.snap-start { scroll-snap-align: start }
+.scroll-smooth { scroll-behavior: smooth }
+
+/* Hide desktop scrollbar for vertical activities scroller and keep scroll functional */
+@media (min-width: 768px) {
+  .activities-scroller {
+    -ms-overflow-style: none; /* IE, Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  .activities-scroller::-webkit-scrollbar { display: none; } /* Chrome, Safari, Opera */
+}
+
+/* make nav dots easier to tap on mobile */
+@media (max-width: 768px) {
+  nav.md\:flex { display: none }
+}
+
+
+.clip-path{
+    clip-path: polygon(30px 0px, calc(100% - 30px) 0px, calc(100% - 30px) 0px, calc(100% - 25.136649px) 0.392961px, calc(100% - 20.522112px) 1.530528px, calc(100% - 16.218363px) 3.350727px, calc(100% - 12.287376px) 5.791584px, calc(100% - 8.791125px) 8.791125px, calc(100% - 5.7915839999999px) 12.287376px, calc(100% - 3.350727px) 16.218363px, calc(100% - 1.530528px) 20.522112px, calc(100% - 0.39296100000001px) 25.136649px, calc(100% - 0px) 30px, calc(100% - 0px) calc(100% - 30px), calc(100% - 0px) calc(100% - 30px), calc(100% - 0.3929609999999px) calc(100% - 25.136649px), calc(100% - 1.5305279999998px) calc(100% - 20.522112px), calc(100% - 3.3507269999999px) calc(100% - 16.218363px), calc(100% - 5.7915839999999px) calc(100% - 12.287376px), calc(100% - 8.791125px) calc(100% - 8.791125px), calc(100% - 12.287376px) calc(100% - 5.7915839999998px), calc(100% - 16.218363px) calc(100% - 3.350727px), calc(100% - 20.522112px) calc(100% - 1.530528px), calc(100% - 25.136649px) calc(100% - 0.39296100000001px), calc(100% - 30px) calc(100% - 1.1368683772162E-13px), 270px calc(100% - 0px), 270px calc(100% - 0px), 265.136649px calc(100% - 0.3929609999999px), 260.522112px calc(100% - 1.5305279999998px), 256.218363px calc(100% - 3.350727px), 252.287376px calc(100% - 5.7915840000001px), 248.791125px calc(100% - 8.791125px), 245.791584px calc(100% - 12.287376px), 243.350727px calc(100% - 16.218363px), 241.530528px calc(100% - 20.522112px), 240.392961px calc(100% - 25.136649px), 240px calc(100% - 30px), 240px calc(100% - 80px), 240px calc(100% - 80px), 239.738026px calc(100% - 83.242234px), 238.979648px calc(100% - 86.318592px), 237.766182px calc(100% - 89.187758px), 236.138944px calc(100% - 91.808416px), 234.13925px calc(100% - 94.13925px), 231.808416px calc(100% - 96.138944px), 229.187758px calc(100% - 97.766182px), 226.318592px calc(100% - 98.979648px), 223.242234px calc(100% - 99.738026px), 220px calc(100% - 100px), 140px calc(100% - 100px), 140px calc(100% - 100px), 136.757766px calc(100% - 100.261974px), 133.681408px calc(100% - 101.020352px), 130.812242px calc(100% - 102.233818px), 128.191584px calc(100% - 103.861056px), 125.86075px calc(100% - 105.86075px), 123.861056px calc(100% - 108.191584px), 122.233818px calc(100% - 110.812242px), 121.020352px calc(100% - 113.681408px), 120.261974px calc(100% - 116.757766px), 120px calc(100% - 120px), 120px calc(100% - 210px), 120px calc(100% - 210px), 119.738026px calc(100% - 213.242234px), 118.979648px calc(100% - 216.318592px), 117.766182px calc(100% - 219.187758px), 116.138944px calc(100% - 221.808416px), 114.13925px calc(100% - 224.13925px), 111.808416px calc(100% - 226.138944px), 109.187758px calc(100% - 227.766182px), 106.318592px calc(100% - 228.979648px), 103.242234px calc(100% - 229.738026px), 100px calc(100% - 230px), 30px calc(100% - 230px), 30px calc(100% - 230px), 25.136649px calc(100% - 230.392961px), 20.522112px calc(100% - 231.530528px), 16.218363px calc(100% - 233.350727px), 12.287376px calc(100% - 235.791584px), 8.791125px calc(100% - 238.791125px), 5.791584px calc(100% - 242.287376px), 3.350727px calc(100% - 246.218363px), 1.530528px calc(100% - 250.522112px), 0.392961px calc(100% - 255.136649px), 4.9709330385403E-31px calc(100% - 260px), 0px 30px, 0px 30px, 0.392961px 25.136649px, 1.530528px 20.522112px, 3.350727px 16.218363px, 5.791584px 12.287376px, 8.791125px 8.791125px, 12.287376px 5.791584px, 16.218363px 3.350727px, 20.522112px 1.530528px, 25.136649px 0.392961px, 30px 4.9709330385403E-31px);
+  }
+
 .clip-path2{
-    border-radius: 10px;
-    clip-path: path("M 0 0 H 420 A 20 20 0 0 1 440 20 V 100 A 20 20 0 0 0 460 120 L 530 120  A 20 20 0 0 1 550 140 V 530 A 20 20 0 0 1 530 550 L 20 500 A 20 20 0 0 1 0 480 V 20 A 20 20 0 0 1 20 0 Z");
+    clip-path: polygon(0px 0px, calc(70% - 43.286px) 0px, calc(70% - 43.286px) calc(65%), calc(82%) calc(65%), calc(82%) calc(100% - 0px), 0px calc(100% - 0px), 0px 0px);
 }
 
 .mobile-clip-path{
-    clip-path: path("M 0 80 A 20 20 0 0 1 20 60 H 140 A 20 20 0 0 0 160 40 V 20 A 20 20 0 0 1 180 0 H 340 A 20 20 0 0 1 360 20 V 330 A 20 20 0 0 1 340 350 H 220 A 20 20 0 0 0 200 370 V 390 A 20 20 0 0 1 180 410 H 20 A 20 20 0 0 1 0 390 Z");
+  clip-path: polygon(0px 80px, 0px 80px, 0.261974px 76.757766px, 1.020352px 73.681408px, 2.233818px 70.812242px, 3.861056px 68.191584px, 5.86075px 65.86075px, 8.191584px 63.861056px, 10.812242px 62.233818px, 13.681408px 61.020352px, 16.757766px 60.261974px, 20px 60px, calc(50% - 40px) 60px, calc(50% - 40px) 60px, calc(50% - 36.757766px) 59.738026px, calc(50% - 33.681408px) 58.979648px, calc(50% - 30.812242px) 57.766182px, calc(50% - 28.191584px) 56.138944px, calc(50% - 25.86075px) 54.13925px, calc(50% - 23.861056px) 51.808416px, calc(50% - 22.233818px) 49.187758px, calc(50% - 21.020352px) 46.318592px, calc(50% - 20.261974px) 43.242234px, calc(50% - 20px) 40px, calc(50% - 20px) 20px, calc(50% - 20px) 20px, calc(50% - 19.738026px) 16.757766px, calc(50% - 18.979648px) 13.681408px, calc(50% - 17.766182px) 10.812242px, calc(50% - 16.138944px) 8.191584px, calc(50% - 14.13925px) 5.86075px, calc(50% - 11.808416px) 3.861056px, calc(50% - 9.187758px) 2.233818px, calc(50% - 6.318592px) 1.020352px, calc(50% - 3.242234px) 0.261974px, calc(50% - 2.8421709430404E-14px) 3.3139553590269E-31px, calc(100% - 20px) 0px, calc(100% - 20px) 0px, calc(100% - 16.757766px) 0.261974px, calc(100% - 13.681408px) 1.020352px, calc(100% - 10.812242px) 2.233818px, calc(100% - 8.191584px) 3.861056px, calc(100% - 5.86075px) 5.86075px, calc(100% - 3.861056px) 8.191584px, calc(100% - 2.233818px) 10.812242px, calc(100% - 1.020352px) 13.681408px, calc(100% - 0.26197400000001px) 16.757766px, calc(100% - 5.6843418860808E-14px) 20px, calc(100% - 0px) calc(100% - 80px), calc(100% - 0px) calc(100% - 80px), calc(100% - 0.26197399999995px) calc(100% - 76.757766px), calc(100% - 1.0203519999999px) calc(100% - 73.681408px), calc(100% - 2.233818px) calc(100% - 70.812242px), calc(100% - 3.861056px) calc(100% - 68.191584px), calc(100% - 5.86075px) calc(100% - 65.86075px), calc(100% - 8.191584px) calc(100% - 63.861056px), calc(100% - 10.812242px) calc(100% - 62.233818px), calc(100% - 13.681408px) calc(100% - 61.020352px), calc(100% - 16.757766px) calc(100% - 60.261974px), calc(100% - 20px) calc(100% - 60px), calc(50% - -40px) calc(100% - 60px), calc(50% - -40px) calc(100% - 60px), calc(50% - -36.757766px) calc(100% - 59.738026px), calc(50% - -33.681408px) calc(100% - 58.979648px), calc(50% - -30.812242px) calc(100% - 57.766182px), calc(50% - -28.191584px) calc(100% - 56.138944px), calc(50% - -25.86075px) calc(100% - 54.13925px), calc(50% - -23.861056px) calc(100% - 51.808416px), calc(50% - -22.233818px) calc(100% - 49.187758px), calc(50% - -21.020352px) calc(100% - 46.318592px), calc(50% - -20.261974px) calc(100% - 43.242234px), calc(50% - -20px) calc(100% - 40px), calc(50% - -20px) calc(100% - 20px), calc(50% - -20px) calc(100% - 20px), calc(50% - -19.738026px) calc(100% - 16.757766px), calc(50% - -18.979648px) calc(100% - 13.681408px), calc(50% - -17.766182px) calc(100% - 10.812242px), calc(50% - -16.138944px) calc(100% - 8.191584px), calc(50% - -14.13925px) calc(100% - 5.86075px), calc(50% - -11.808416px) calc(100% - 3.861056px), calc(50% - -9.187758px) calc(100% - 2.233818px), calc(50% - -6.318592px) calc(100% - 1.020352px), calc(50% - -3.242234px) calc(100% - 0.26197400000001px), calc(50% - 2.8421709430404E-14px) calc(100% - 5.6843418860808E-14px), 20px calc(100% - 0px), 20px calc(100% - 0px), 16.757766px calc(100% - 0.26197399999995px), 13.681408px calc(100% - 1.0203519999999px), 10.812242px calc(100% - 2.233818px), 8.191584px calc(100% - 3.861056px), 5.86075px calc(100% - 5.86075px), 3.861056px calc(100% - 8.191584px), 2.233818px calc(100% - 10.812242px), 1.020352px calc(100% - 13.681408px), 0.261974px calc(100% - 16.757766px), 3.3139553590269E-31px calc(100% - 20px)); 
 }

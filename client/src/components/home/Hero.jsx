@@ -1,43 +1,42 @@
 import React from "react";
+import heroPerson from "../../assets/hero-person.webp";
 
 const Hero = () => {
   return (
     <>
-      {/* Desktop Layout - hidden on mobile */}
-      <div className="hidden lg:flex h-screen w-full">
-        {/* Left section with title */}
-        <div className="h-full w-[28%] flex justify-between items-center flex-col">
-          <div className=""></div>
-          <div className="mt-40 text-[2.5em] font-bold">
-            THRILLVILLE <br /> ENTERTAINMENT <br /> ZONE
-          </div>
-          <div className="ml-80 pt-10 clip-path2 h-[26%] w-[150%] bg-gray-300"></div>
-        </div>
-
-        {/* Center section with clip-path */}
-        <div className="h-full bg-gray-300 clip-path overflow-hidden w-[56%] rounded-4xl flex justify-center items-center"></div>
-
-        {/* Right section with cards */}
-        <div className="h-full w-[20%] absolute right-5 flex justify-center gap-4 items-center">
-          <div className="h-[20%] w-[50%] bg-red-600 rounded-xl"></div>
-          <div className="h-[20%] w-[50%] bg-black rounded-xl"></div>
-        </div>
-      </div>
-
       {/* Mobile Layout - hidden on desktop */}
-      <div className="lg:hidden flex flex-col h-[90%] w-full">
+      <div className="md:hidden grid grid-cols-2 grid-rows-8 h-screen w-full overflow-hidden gap-2 ">
         {/* Top bar */}
-        <div className="h-[5%] w-full bg-gray-300"></div>
+        <div className="h-[30%] row-start-1 row-end-2 col-start-1 col-end-3 self-end bg-gray-300"></div>
 
-        <div className="bg-gray-300 h-[20%] mx-[4%] mb-[4%] mt-[6%] rounded-xl"></div>
+        <div className="row-start-2 row-end-3 col-start-1 col-end-3 m-3 bg-gray-300 rounded-xl"></div>
 
-        <div className="h-[55%] ">
-          <div className="absolute bg-red-300 h-[5.5%] w-[37.5%] mx-[4%] rounded-xl "></div>
-          <div className="bg-gray-300 mobile-clip-path h-full mx-[4%] rounded-xl"></div>
-          <div className="absolute right-0 bottom-32 bg-black h-[5.5%] w-[37.5%] mx-[4%] rounded-xl "></div>
+        <div className="row-start-3 row-end-4 col-start-1 col-end-2 bg-red-600 h-12 w-4/5 m-3 rounded-xl "></div>
+        <div className="row-start-3 row-end-8 col-start-1 col-end-3 m-3 bg-gray-300 mobile-clip-path rounded-xl"></div>
+        <div className="row-start-7 row-end-8 justify-self-end self-end m-3 col-start-2 col-end-3 bg-black h-12 w-4/5 rounded-xl"></div>
+
+        <div className="col-start-1 col-end-3 m-3 row-start-8 row-end-9 rounded-xl bg-gray-300 "></div>
+      </div>
+      {/* desktop layout */}
+      <div
+        id="home"
+        className="hidden md:grid md:pt-[10%] lg:pt-0 grid-cols-14 gap-1 grid-rows-3 h-screen w-full "
+      >
+        <div className="row-start-2 ml-[3vw] justify-center flex flex-col row-end-3 col-start-1 col-end-5 ">
+          <h1 className=" font-bold text-[2.9vw] ">THRILLVILLE</h1> 
+          <br />
+          <h1 className=" font-bold text-[2.9vw] ">ENTERTAINMENT</h1>
+          <br />
+          <h1 className=" font-bold text-[2.9vw] ">ZONE</h1>
         </div>
-
-        <div className="h-[13%] mx-[4%] my-[4%] rounded-xl bg-gray-300 "></div>
+        <div className="row-start-3 row-end-4 col-start-1 col-end-8 ml-[3vw] relative clip-path2 bg-blue-700 mt-10 "></div>
+        <div className="col-start-5 col-end-12 clip-path row-start-1 row-span-3 bg-red-600 relative overflow-hidden">
+          <img src={heroPerson} alt="" className="w-full h-full object-cover" />
+        </div>
+        <div className="row-start-2 row-end-3 col-start-10 gap-2 col-end-15 z-10 justify-evenly flex items-center ">
+          <div className="h-full w-[50%] ml-2 bg-amber-500 rounded-xl "></div>
+          <div className="h-full w-[50%] mr-2 bg-amber-500 rounded-xl "></div>
+        </div>
       </div>
     </>
   );

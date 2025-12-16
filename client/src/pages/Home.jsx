@@ -1,14 +1,12 @@
 import React from 'react'
 import Hero from '../components/home/Hero'
-import Navbar from '../components/home/Navbar'
+import ActivitiesCarousel from '../components/home/ActivitiesCarousel'
 
 const Home = () => {
   return (
-    <div className='h-screen'>
-        <Navbar /> 
+    <div className='w-full overflow-x-hidden'>
         <Hero />
-        <div className='h-screen'></div>
-        <div className='h-screen'></div>
+        <ActivitiesCarousel />
     </div>
   )
 }

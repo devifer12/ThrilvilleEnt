@@ -79,6 +79,12 @@ web_modules/
 .env.production.local
 .env.local
 
+# Lockfiles (do not commit package manager lockfiles if you prefer)
+package-lock.json
+npm-shrinkwrap.json
+pnpm-lock.yaml
+yarn.lock
+
 # parcel-bundler cache (https://parceljs.org/)
 .cache
 .parcel-cache
