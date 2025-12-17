@@ -11,7 +11,7 @@ const Navbar = () => {
   return (
     <>
       {/* Desktop Layout */}
-      <div className="hidden lg:flex z-10 fixed top-0 left-0 right-0 justify-between p-8 text-[1.3vw]">
+      <div className="hidden lg:flex z-100 fixed top-0 left-0 right-0 justify-between p-8 text-[1.3vw]">
         <div className="flex gap-4">
           <NavLink to="/" end className={({isActive}) => `px-3 py-2 ${isActive ? 'bg-black text-white rounded-full' : ''}`}>
             Home
@@ -32,7 +32,7 @@ const Navbar = () => {
         </div>
       </div>
       {/* Mobile Layout */}
-      <div className="lg:hidden z-20 fixed top-0 left-0 right-0 flex items-center justify-between px-4 py-3 bg-white shadow">
+      <div className="lg:hidden z-200 fixed top-0 left-0 right-0 flex items-center justify-between px-4 py-3 bg-white shadow">
         <div className="flex items-center gap-3">
           {/* show profile or get started on mobile */}
           <MobileAuth />
@@ -122,7 +122,7 @@ const MobileMenu = () => {
   const close = () => window.__mobileMenuToggle?.setOpen(false)
 
   return (
-    <div className="lg:hidden fixed top-14 left-0 right-0 bg-white z-30 shadow-md py-6 px-6">
+    <div className="lg:hidden fixed top-14 left-0 right-0 bg-white z-300 shadow-md py-6 px-6">
       <nav className="flex flex-col gap-4">
         <NavLink to="/" end onClick={close} className={({isActive}) => `py-2 ${isActive ? 'bg-black text-white rounded-full px-4' : 'px-2'}`}>
           Home

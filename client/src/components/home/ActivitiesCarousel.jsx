@@ -67,7 +67,7 @@ const ActivitiesCarousel = () => {
       <h2 className="text-3xl font-bold mb-6">Activities</h2>
 
       <div
-        className="w-full max-w-6xl h-[70vh] flex items-center justify-center gap-6 px-4 overflow-hidden activities-row"
+        className="w-full max-w-7xl h-[70vh] flex items-center justify-center gap-6 px-6 md:px-8 overflow-hidden activities-row"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
         onTouchStart={onTouchStart}
